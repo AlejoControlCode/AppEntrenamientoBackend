@@ -1,0 +1,23 @@
+const { DataTypes} = require('sequelize');
+const {sequelize} = require('../../config/database');
+
+
+const Atletas = sequelize.define('Atletas', {
+    ID_Atleta: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    Nombre: { type: DataTypes.STRING, allowNull: false },
+    Fecha_Nacimiento: { type: DataTypes.DATE, allowNull: false },
+    Sexo: { type: DataTypes.STRING, allowNull: false },
+    Tipo_Documento: { type: DataTypes.STRING, allowNull: false },
+    Email: { type: DataTypes.STRING, allowNull: false, unique: true },
+    Telefono: { type: DataTypes.STRING, allowNull: false },
+    Especialidad: { type: DataTypes.JSON,allowNull: false },
+    Prueba: { type: DataTypes.JSON, allowNull: false },
+    Categoria: { type: DataTypes.STRING, allowNull: false },
+    Nivel: { type: DataTypes.STRING, allowNull: false },
+    Fecha_Registro: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
+
+}, {
+  tableName: 'Atletas',
+  timestamps: false
+})
+module.exports = Atletas;

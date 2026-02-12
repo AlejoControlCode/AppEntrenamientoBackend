@@ -1,0 +1,45 @@
+const Atletas = require('../shared/models/Atletas');
+
+const AgregarAtleta = async (req, res) => {
+  try {
+    const {
+      ID_Atleta,
+      Nombre,
+      Fecha_Nacimiento,
+      Sexo,
+      Tipo_Documento,
+      Email,
+      Telefono,
+      Especialidad,
+      Prueba,
+      Categoria,
+      Nivel
+    } = req.body;
+
+    const nuevoAtleta = await Atletas.create({
+      ID_Atleta,
+      Nombre,
+      Fecha_Nacimiento,
+      Sexo,
+      Tipo_Documento,
+      Email,
+      Telefono,
+      Especialidad,
+      Prueba,
+      Categoria,
+      Nivel
+    });
+
+    res.status(201).json({
+        message: 'El deportista se agrego de manera correcta',
+        timestamp: new Date(),
+        data: nuevoAtleta
+    });
+
+  } catch (error) {
+    console.error('Error al agregar atleta:', error);
+    res.status(500).json({ error: 'Error al agregar atleta' });
+  }
+};
+
+module.exports = { AgregarAtleta };
