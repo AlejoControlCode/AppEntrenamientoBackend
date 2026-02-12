@@ -9,12 +9,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(corsMiddleware);
 
 //Aca se van a escribir las rutas del MVC (Model View Controlller)
 
 app.use('/api/Atletas', require('./routes/AtletasRoutes'))
-
+app.use('/api/MacroCiclo', require('./routes/MacroCicloRoutes'))
 
 
 //--------------------------------------

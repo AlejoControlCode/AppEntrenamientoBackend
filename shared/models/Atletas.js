@@ -3,7 +3,7 @@ const {sequelize} = require('../../config/database');
 
 
 const Atletas = sequelize.define('Atletas', {
-    ID_Atleta: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    ID_Atleta: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false },
     Nombre: { type: DataTypes.STRING, allowNull: false },
     Fecha_Nacimiento: { type: DataTypes.DATE, allowNull: false },
     Sexo: { type: DataTypes.STRING, allowNull: false },
@@ -14,8 +14,8 @@ const Atletas = sequelize.define('Atletas', {
     Prueba: { type: DataTypes.JSON, allowNull: false },
     Categoria: { type: DataTypes.STRING, allowNull: false },
     Nivel: { type: DataTypes.STRING, allowNull: false },
-    Fecha_Registro: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
-
+    Fecha_Registro: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
+    Estado:{ type: DataTypes.BOOLEAN, defaultValue: true }
 }, {
   tableName: 'Atletas',
   timestamps: false
