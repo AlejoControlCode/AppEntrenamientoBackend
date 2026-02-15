@@ -1,6 +1,7 @@
 const {sequelize} = require('../../config/database');
 const Atletas = require('./Atletas');
 const MacroCiclo = require('./MacroCiclo');
+const MesoCiclo = require('./MesoCiclo');
 
 
 
@@ -19,5 +20,6 @@ const synCmodels = async () => {
 module.exports = {
     synCmodels,
     Atletas, 
-    MacroCiclo
+    MacroCiclo,
+    MesoCiclo
 }

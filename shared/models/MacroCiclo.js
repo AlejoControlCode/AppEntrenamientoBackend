@@ -3,6 +3,8 @@ const {sequelize} = require('../../config/database');
 
 const MacroCiclo = sequelize.define('MacroCiclo', {
     ID_MacroCiclo: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false, autoIncrement: true  },
+    FechaInicio: { type: DataTypes.DATE, allowNull: true },
+    FechaFin: { type: DataTypes.DATE, allowNull: true },
     Atleta_FK: {type: DataTypes.INTEGER,allowNull: false,
     references: {
         model: 'Atletas',   // nombre EXACTO de la tabla
