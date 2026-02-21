@@ -17,6 +17,7 @@ app.use(corsMiddleware);
 app.use('/api/Atletas', require('./routes/AtletasRoutes'))
 app.use('/api/MacroCiclo', require('./routes/MacroCicloRoutes'))
 app.use('/api/MesoCiclo', require('./routes/MesoCicloRoutes'))
+app.use('/api/MicroCiclo', require('./routes/MicroCicloRoutes'))
 
 
 // debe de crear la ruta para el micro ciclo,
